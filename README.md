@@ -72,7 +72,7 @@ mvn site
 3. Встановіть змінну середовища `DB_PASSWORD` з паролем для бази даних PostgreSQL.
 4. Для Windows налаштуйте консоль на використання UTF-8 кодування: `chcp 65001`
 5. Зберіть програму за допомогою команди: `mvn clean install`.
-6. Запустіть програму за допомогою команди: `mvn exec:java -D"exec.mainClass=com.college.MainApp"`.
+6. Запустіть програму за допомогою команди: `mvn exec:java -D"exec.mainClass=com.shops.MainApp"`.
 
 ## Використання змінних середовища для паролів бази даних
 
@@ -98,5 +98,5 @@ export DB_PASSWORD=your_password
 
 ```
 chcp 65001
-mvn exec:java -D"exec.mainClass=com.college.MainApp"
+mvn exec:java -D"exec.mainClass=com.shops.MainApp"
 ```

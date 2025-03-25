@@ -1,4 +1,4 @@
-package com.college.config;
+package com.shops.config;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
