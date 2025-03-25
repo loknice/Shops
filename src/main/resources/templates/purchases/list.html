@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Список покупок</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Список покупок</h2>
+            <a href="/purchases/add" class="btn btn-primary">Додати нову покупку</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Покупець</th>
+                        <th>Магазин</th>
+                        <th>Товар</th>
+                        <th>Спосіб оплати</th>
+                        <th>Дата покупки</th>
+                        <th>Кількість</th>
+                        <th>Сума</th>
+                        <th>Бонуси</th>
+                        <th>Знижка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="purchase : ${purchases}">
+                        <td th:text="${purchase.customer.fullName}"></td>
+                        <td th:text="${purchase.shop.address} + ', ' + ${purchase.shop.city}"></td>
+                        <td th:text="${purchase.product.name}"></td>
+                        <td th:text="${purchase.paymentMethod}"></td>
+                        <td th:text="${#temporals.format(purchase.purchaseDate, 'dd.MM.yyyy')}"></td>
+                        <td th:text="${purchase.quantity}"></td>
+                        <td th:text="${purchase.amount}"></td>
+                        <td th:text="${purchase.bonusEarned}"></td>
+                        <td th:text="${purchase.discount} + '%'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
